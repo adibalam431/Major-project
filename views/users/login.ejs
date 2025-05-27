@@ -1,0 +1,38 @@
+<% layout("/layouts/boilerplate") %>
+
+    <div class="row mt-3 " style="min-height: -webkit-calc(100vh - 240px);">
+        <h3 class="col-5 offset-3">Login</h3>
+        <div class="col-5 offset-3" >
+            <form method="POST" action="/login" novalidate class="needs-validation">
+                <div class="mb-3">
+                    <lable for="username" class="form-lebel">Username</lable>
+                    <input
+                    name="username"
+                    id="username"
+                    type="text"
+                    class="form-control"
+                    required
+                    />
+                    <div class="invalid-feedback">
+                      Username required
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <lable for="password" class="form-lebel">Password</lable>
+                    <input
+                   
+                    name="password"
+                    id="password"
+                    type="password"
+                    class="form-control"
+                    required
+                    />
+                    
+                </div>
+
+                <button class="btn btn-primary">Login</button>
+            </form>
+
+        </div>
+    </div>

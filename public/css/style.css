@@ -1,0 +1,135 @@
+body{
+    background-color: rgb(146, 215, 238);
+}
+
+/* navbar */
+.navbar a:hover{
+text-decoration:underline;
+}
+
+.navbar{
+    height:4rem;
+    padding: 2rem;
+    background: rgb(26, 163, 209);
+    width: 100%;
+   
+    position: sticky;
+  top: 0;
+  overflow: hidden;
+    z-index: 1;
+}
+.fa-sun{
+    color: red;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important ;
+}
+
+
+
+/* footer */
+.f-info-links a{
+text-decoration: none;
+color: #222222;
+color: aliceblue;
+margin-bottom: 0.5rem;
+margin-left: 0.5rem;
+margin-right: 0.5rem;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+
+}
+
+
+.f-info-socials i{
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brands{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+.f-info{
+    text-align: center;
+    height: 8rem;
+display: flex;
+flex-wrap:wrap ;
+justify-content: center;
+align-items: space-evenly;
+background-color: #4b4545;
+color: aliceblue;
+}
+
+
+/* index */
+.card{
+    background: lightblue;
+    margin-bottom: 0.3rem;
+    break-inside: avoid;
+    border:  solid 2.5px black;
+    border-radius: 10px;
+}
+
+.card a{
+    text-decoration: none;
+    color: black;
+}
+
+.car:hover{
+transform: scale(1.01);
+}
+
+.card-img-top{
+    border-radius: 8px 8px 0px 0px ;
+}
+
+.main{
+   columns: 265px;
+    margin: 0px;
+    column-gap: 0.3rem;
+}
+.lil{
+
+    margin: 0.6rem;
+    padding: 0.6rem;
+}
+
+
+/* show */
+
+
+
+.edbt{
+    width: 20%;
+    display: flex;
+   justify-content: space-around;
+}
+.edbt button{
+    width: 6rem;
+}
+
+.main1 img{
+    border-radius: 10px;
+}
+.main2{
+    margin-left: 1.2rem;
+}
+
+
+/* show comment */
+.viewComment{
+    columns: 345px;
+     margin: 2px;
+     column-gap: 0.3rem;
+ }
+

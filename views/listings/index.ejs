@@ -1,0 +1,135 @@
+<% layout("/layouts/boilerplate") %>
+
+  <body>
+    <!-- <form method="GET" action="/listings/new">
+        <button>Create New Listing</button>
+    </form> -->
+<style>
+  #filters{
+    display: flex;
+    flex-wrap: wrap;
+    align-content:space-evenly ;
+    align-items: center;
+  }
+  .filter{
+    text-align: center;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    opacity: 0.75;
+  }
+  .filter:hover{
+    opacity: 1;
+    cursor: pointer;
+    text-shadow: 0 0.015em #101010,0 -0.015em #101010,0.01em 0 #101010,-0.01em 0 #101010;
+  }
+ 
+  .tax-info{
+display: none;
+font-weight: 300;
+  }
+
+  .tax-toggle{
+    border: 1px solid black;
+    padding: 0.6rem;
+    border-radius: 7px ;
+    margin-left: 4rem;
+  }
+
+ 
+
+ 
+</style>
+
+    <div id="filters">
+      <div class="filter" onclick="window.location.href='/listings/filter'">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+      </div>
+
+      <div class="filter" onclick="window.location.href='/listings/filter'">
+        <div><i class="fa-solid fa-tree"></i></div>
+        <p>Hills</p>
+      </div>
+
+      <div class="filter" onclick="window.location.href='/listings/filter'">
+        <div><i class="fa-solid fa-bicycle"></i></div>
+        <p>Bicycle</p>
+      </div>
+
+      <div class="filter" onclick="window.location.href='/listings/filter'">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic city</p>
+      </div>
+      <div class="filter" onclick="window.location.href='/listings/filter'">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+      </div>
+
+      <div class="filter" onclick="window.location.href='/listings/filter'">
+        <div><i class="fa-solid fa-tree"></i></div>
+        <p>Hills</p>
+      </div>
+
+      <div class="filter" onclick="window.location.href='/listings/filter'">
+        <div><i class="fa-solid fa-bicycle"></i></div>
+        <p>Bicycle</p>
+      </div>
+
+      <div class="filter" onclick="window.location.href='/listings/filter'">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic city</p>
+      </div>
+      <div class="filter" onclick="window.location.href='/listings/filter'">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic city</p>
+      </div>
+      
+      <div class="tax-toggle">
+        <div class="form-check-reverse form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+          <label class="form-check-label" for="switchCheckDefault">Display total before taxes</label>
+        </div>
+      </div>
+    </div>
+     
+    
+
+
+    <div class="main" style="margin:1rem">
+      <%for(let lis of allListings){%>
+
+        <div class="card car" style="width: 100%; object-fit: contain">
+          <a href="/listings/<%=lis._id%>">
+            <img src="<%=lis.image.url%>" class="card-img-top">
+            <div class="card-body">
+              <p class="card-text"><b><i>
+                    <%=lis.title%>
+                  </i></b><br>
+                  &#8377; <%=lis.price.toLocaleString("en-IN")%> /night <i class="tax-info">+18%GST</i>
+                </p>
+            </div>
+          </a>
+
+        </div>
+
+        <%}%>
+    </div>
+    <script>
+      let taxSwitch = document.getElementById("switchCheckDefault");
+      taxSwitch.addEventListener("click", ()=>{
+      let taxInfo = document.getElementsByClassName("tax-info");
+      for(info of taxInfo){
+      if(info.style.display != "inline"){
+          info.style.display="inline";
+      }else{
+        info.style.display="none";
+      }
+      }
+      })
+    </script>
+  </body>
+
+
+
+
+  

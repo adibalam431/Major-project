@@ -1,0 +1,146 @@
+/* Reset and base styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, rgb(35, 145, 181), rgb(119, 194, 219));
+      color: #0c3c52; /* dark shade for text */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+    body {
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 400px;
+      background: aliceblue;
+      border-radius: 14px;
+      padding: 36px 40px 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      animation: float 6s ease-in-out infinite;
+      user-select:none;
+      color: rgb(26, 163, 209);
+    }
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        background: aliceblue;
+        color: rgb(26, 163, 209);
+      }
+      50% {
+        transform: translateY(-10px);
+        box-shadow: 0 28px 55px rgba(0, 0, 0, 0.6);
+        background: lightblue;
+        color: rgb(26, 163, 209);
+      }
+    }
+    .icon {
+      font-size: 6rem;
+      margin-bottom: 28px;
+      animation: pulse 2.4s infinite ease-in-out;
+      filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.7));
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      position: relative;
+      color: rgb(26, 163, 209);
+      user-select:none;
+    }
+    /* Underline */
+    h1::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, rgb(146, 215, 238), rgb(26, 163, 209));
+      margin: 12px auto 0;
+      border-radius: 2px;
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
+    }
+    p {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      opacity: 0.85;
+      margin: 28px 0 36px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: rgb(26, 163, 209);
+      user-select:none;
+    }
+    button.go-back {
+      background: linear-gradient(135deg, rgb(26, 163, 209), rgb(146, 215, 238));
+      border: none;
+      border-radius: 9px;
+      padding: 14px 34px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: aliceblue;
+      cursor: pointer;
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        0 0 28px rgba(0, 0, 0, 0.5);
+      transition:
+        background-color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.3s ease;
+      user-select:none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      will-change: transform, box-shadow;
+      outline-offset: 3px;
+    }
+    button.go-back:hover {
+      background: linear-gradient(135deg, rgb(146, 215, 238), rgb(26, 163, 209));
+      box-shadow:
+        0 12px 36px rgba(0, 0, 0, 0.7),
+        0 0 56px rgba(0, 0, 0, 0.6);
+      transform: scale(1.07);
+      color: aliceblue;
+    }
+    button.go-back:focus-visible {
+      outline: 3px solid rgb(146, 215, 238);
+      outline-offset: 4px;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.12);
+        opacity: 0.75;
+      }
+    }
+    @media (max-width: 400px) {
+      .container {
+        max-width: 90vw;
+        padding: 28px 24px 32px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .icon {
+        font-size: 4.8rem;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1rem;
+        margin: 18px 0 26px;
+      }
+      button.go-back {
+        padding: 12px 28px;
+        font-size: 1rem;
+      }
+    }
