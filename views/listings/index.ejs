@@ -132,4 +132,95 @@ font-weight: 300;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  body {
+    height: 100vh;
+    margin: 0;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .search-container {
+    width: 320px;
+    max-width: 90vw;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0 6px 18px rgba(0,123,255,0.3);
+    background-color: #fff;
+    padding: 8px 20px;
+  }
+  input[type="text"] {
+    flex-grow: 1;
+    border: none;
+    font-size: 16px;
+    padding: 10px 12px;
+    border-radius: 50px;
+    outline: none;
+    color: #333;
+  }
+  input[type="text"]::placeholder {
+    color: #888;
+  }
+  button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-left: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+  button svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+  }
+  @media (max-width: 400px) {
+    .search-container {
+      width: 90vw;
+      padding: 8px 16px;
+    }
+  }
+</style>
+<div class="search-container" role="search">
+  <input type="text" placeholder="Search..." aria-label="Search" />
+  <button type="submit" aria-label="Search">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M21 20l-5.6-5.6a7 7 0 1 0-1.4 1.4L20 21zM10 16a6 6 0 1 1 0-12 6 6 0 0 1 0 12z" />
+    </svg>
+  </button>
+</div>
+
+
+
+
+
+
   
