@@ -105,9 +105,11 @@ app.use("/listings/:id/reviews", reviewsRouter);
 
 
 
-app.listen(8080, () => {
-  console.log("he gy")
-})
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
 
 
 
