@@ -10,7 +10,7 @@ const { isLoggedIn, isOwner, validateList } = require("../middleware.js");
 
 
 router.route("/")
-    .get((listingController.index))
+    .get((userController.index))
     .post( isLoggedIn, upload.single("list[image]"),validateList, wrapAsync(listingController.newListing));
 
     
