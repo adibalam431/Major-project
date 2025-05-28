@@ -7,6 +7,10 @@ const express = require("express");
 const multer = require("multer");     //use for save files
 const upload = multer({dest:"uploads/"})//same use file save
 const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Server is live!");
+});
 const mongoose = require("mongoose");
 const mongoUrl = ("mongodb://127.0.0.1:27017/wonderlust");
 const path = require("path");//for using ejs 
@@ -95,9 +99,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // });
 
 
-app.get("/", (req, res) => {
-  res.send("Server is live!");
-});
+
 
 app.use("/", userRouter);
 app.use("/listings", listingsRouter);
