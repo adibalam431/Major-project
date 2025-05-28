@@ -5,12 +5,13 @@ const wrapAsync = require("../utils/wrapAsync");
 const passport = require("passport");
 const { saveRedirectUrl } = require("../middleware.js");
 const userController = require("../controllers/user.js");
+const listingController = require("../controllers/listing.js");
 const { isLoggedIn, isOwner, validateList } = require("../middleware.js");
 
 
 
 router.route("/")
-    .get((userController.index))
+    .get((listingController.index))
     .post( isLoggedIn, upload.single("list[image]"),validateList, wrapAsync(listingController.newListing));
 
     
