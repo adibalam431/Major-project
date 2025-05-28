@@ -95,6 +95,10 @@ app.use(express.static(path.join(__dirname, "public")));
 // });
 
 
+app.get("/", (req, res) => {
+  res.send("Server is live!");
+});
+
 app.use("/", userRouter);
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
