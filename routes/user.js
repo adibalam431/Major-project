@@ -8,6 +8,10 @@ const userController = require("../controllers/user.js");
 const listingController = require("../controllers/listing.js");
 const { isLoggedIn, isOwner, validateList } = require("../middleware.js");
 
+const multer = require("multer");     //use for save files
+const { storage } = require("../cloudConfig")
+const upload = multer({ storage })//same use file save location
+
 
 
 router.route("/")
