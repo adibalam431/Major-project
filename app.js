@@ -96,7 +96,9 @@ app.use(express.static(path.join(__dirname, "public")));
 // });
 
 
-
+app.get("/", (req, res) => {
+  res.send("✅ Server is live on Render!");
+});
 
 app.use("/", userRouter);
 app.use("/listings", listingsRouter);
