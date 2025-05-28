@@ -9,11 +9,6 @@ const { isLoggedIn, isOwner, validateList } = require("../middleware.js");
 
 
 
-router.route("/")
-  .get((req, res) => {
-    res.send("betis jeetbe ke nai");
-  });
-
     
 
 //signup
