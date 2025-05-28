@@ -10,7 +10,7 @@ const { isLoggedIn, isOwner, validateList } = require("../middleware.js");
 
 
 router.route("/" ,(req,res)=>{
-    res.send("kokok");
+    res.send("betis jeetbe");
 })
     
 
