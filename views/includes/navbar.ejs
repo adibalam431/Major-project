@@ -1,24 +1,9 @@
-<!-- 
-The issue is that on small screens, the navbar toggle button is showing but when it is clicked, the navbar options (links and search bar) are not expanding/shown.
-
-Potential causes:
-- Bootstrap JavaScript or Popper.js files may not be loaded correctly.
-- The collapse div's id and the data-bs-target on the toggle button must match exactly.
-- The navbar content might be hidden or styled in a way that prevents it from being shown.
-
-I need to carefully verify the bootstrap and popper.js CDN links, confirm correct attributes on the toggle, and the structure of the collapse menu.
-
-I will recreate a minimal fully functional responsive bootstrap navbar with your content, making sure the toggle works on small devices.
-
-
-`responsive-navbar.html`
-```html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Responsive Navbar</title>
+  <title>Responsive Navbar Improved</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <style>
@@ -47,12 +32,13 @@ I will recreate a minimal fully functional responsive bootstrap navbar with your
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+    <div class="collapse navbar-collapse d-flex flex-column flex-md-row align-items-start align-items-md-center" id="navbarNavAltMarkup">
+      
+      <div class="navbar-nav mb-2 mb-md-0">
         <a class="nav-link" href="/listings">Explore</a>
       </div>
 
-      <div class="search-container ms-auto my-2 my-md-0" role="search" style="min-width: 250px;">
+      <div class="search-container ms-md-3 my-2 my-md-0 w-100 w-md-auto" role="search" style="min-width: 250px;">
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search Destination" aria-label="Search" />
           <button class="btn btn-search" type="submit" aria-label="Search">
@@ -61,7 +47,7 @@ I will recreate a minimal fully functional responsive bootstrap navbar with your
         </form>
       </div>
 
-      <div class="navbar-nav ms-auto">
+      <div class="navbar-nav ms-md-auto mt-2 mt-md-0">
         <a class="nav-link" href="/listings/new">Airbnb your home</a>
         <!-- Example user logic -->
         <a class="nav-link" href="/login"><b>Login</b></a>
@@ -76,4 +62,3 @@ I will recreate a minimal fully functional responsive bootstrap navbar with your
 </body>
 </html>
 
-```
