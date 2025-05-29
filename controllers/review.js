@@ -1,5 +1,6 @@
 const Listing = require("../models/listing");
 const Review = require("../models/review.js");
+const {reviewSchema,listingSchema} = require("../schema.js");
 
 module.exports.deleteReview = async (req, res) => {
     let { id, r_id } = req.params;
