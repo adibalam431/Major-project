@@ -62,13 +62,14 @@ I will recreate a minimal fully functional responsive bootstrap navbar with your
         <div class="navbar-nav ms-auto">
           <a class="nav-link" href="/listings/new">Airbnb your home</a>
           <!-- Example user logic -->
-          <%if(!req.user){%>
+          <%if(!currUser){%>
             <a class="nav-link" href="/login"><b>Login</b></a>
             <a class="nav-link" href="/signup"><b>Signup</b></a>
-            <%}else{%>
-              <a class="nav-link" href="/logout"><b>Logout</b></a>
+            <%}%>
+              <%if(currUser){%>
+                <a class="nav-link" href="/logout"><b>Logout</b></a>
 
-              <%}%>
+                <%}%>
 
         </div>
       </div>
